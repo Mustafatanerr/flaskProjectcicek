@@ -70,5 +70,21 @@ def index():
 def download(filename):
     return send_file(filename, as_attachment=True)
 
+@app.route('/sitemap.xml', methods=['GET'])
+def sitemap():
+    pages = []
+    ten_days_ago = (datetime.datetime.now() - datetime.timedelta(days=10)).date().isoformat()
+
+    # Mevcut rotalarınızı ekleyin
+    for rule in app.url_map.iter_rules():
+        if "GET" in rule.methods and len(rule.arguments) == 0:
+            pages.append(
+                ["https://cicekalfabesi.com" + str(rule.rule), ten_days_ago]
+            )
+
+    sitemap_xml = render_template('sitemap_template.xml', pages=pages)
+    response = Response(sitemap_xml, mimetype='application/xml')
+    return response
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
