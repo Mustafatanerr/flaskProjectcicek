@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 20px; /* Sayfanın her iki tarafında boşluk bırakarak içerikleri merkezler */
+    box-sizing: border-box;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.flash-messages {
+    background-color: #ffdddd;
+    color: #d8000c;
+    border: 1px solid #d8000c;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+form {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+label {
+    font-size: 18px;
+    color: #555;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: calc(100% - 22px);
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+h2 {
+    color: #333;
+    margin-top: 30px; /* Başlıkları biraz daha aşağıya indirdik */
+}
+
+.flower-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Butonlar arasına boşluk ekledik */
+    margin-top: 20px;
+}
+
+.download-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+}
+
+.return-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.return-button:hover {
+    background-color: #c82333;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    label, button, .download-button, .return-button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    input[type="text"] {
+        font-size: 14px;
+    }
+}

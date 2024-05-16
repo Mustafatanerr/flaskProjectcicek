@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çiçek Alfabesi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1>Çiçek Alfabesi</h1>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            {% if name %}
+                <div class="result-section">
+                    <h2>Girilen İsim: {{ name }}</h2>
+                    <h2>Oluşturulan Resim:</h2>
+                    <img src="{{ image_path_transparent }}" alt="Çiçek Demet Resmi" class="flower-image">
+                    <div class="download-buttons">
+                        <a href="{{ url_for('download', filename=image_path_normal) }}" class="download-button">Görseli İndir</a>
+                        <form action="{{ url_for('index') }}" class="return-form">
+                            <button type="submit" class="return-button">Ana Sayfaya Dön</button>
+                        </form>
+                    </div>
+                </div>
+            {% else %}
+                <form method="POST">
+                    <label for="name">İsim Girin:</label>
+                    <input type="text" id="name" name="name" required>
+                    <button type="submit">Oluştur</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
