@@ -3,6 +3,7 @@ from PIL import Image, ImageDraw
 import os
 import math
 import re
+import datetime
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Flash mesajları için gerekli
