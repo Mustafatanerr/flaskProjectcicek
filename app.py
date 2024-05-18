@@ -4,6 +4,7 @@ import os
 import math
 import re
 import datetime
+import uuid  # Benzersiz dosya adları için ekledik
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Flash mesajları için gerekli
@@ -47,8 +48,9 @@ def generate_flower_bouquet(name, transparent=True):
     vase_y = canvas_height - vase_height - 100  # Vazoyu biraz daha yukarı taşıdık
     canvas.paste(vase, (vase_x, vase_y), vase)
 
-    # Son resmi kaydet
-    output_path = os.path.join('static', 'output', f'flower_bouquet_{"transparent" if transparent else "normal"}.png')
+    # Benzersiz dosya adı oluştur
+    unique_id = uuid.uuid4().hex
+    output_path = os.path.join('static', 'output', f'flower_bouquet_{unique_id}_{"transparent" if transparent else "normal"}.png')
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     canvas.save(output_path, format='PNG')
     return output_path
