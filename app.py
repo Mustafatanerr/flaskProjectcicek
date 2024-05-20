@@ -62,8 +62,7 @@ def generate_flower_bouquet(name, transparent=True):
 
     output_path = os.path.join('static', 'output', f'flower_bouquet_{unique_id}_{"transparent" if transparent else "normal"}.png')
 
-    output_path = os.path.join('static', 'output',
-                               f'flower_bouquet_{unique_id}_{"transparent" if transparent else "normal"}.png')
+    
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     canvas.save(output_path, format='PNG')
