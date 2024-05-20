@@ -59,12 +59,12 @@ def generate_flower_bouquet(name, transparent=True):
 
     # Benzersiz dosya adı oluştur
     unique_id = uuid.uuid4().hex
-<<<<<<< Updated upstream
+
     output_path = os.path.join('static', 'output', f'flower_bouquet_{unique_id}_{"transparent" if transparent else "normal"}.png')
-=======
+
     output_path = os.path.join('static', 'output',
                                f'flower_bouquet_{unique_id}_{"transparent" if transparent else "normal"}.png')
->>>>>>> Stashed changes
+
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     canvas.save(output_path, format='PNG')
 
@@ -92,10 +92,7 @@ def index():
 def download(filename):
     return send_file(filename, as_attachment=True)
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 @app.route('/sitemap.xml', methods=['GET'])
 def sitemap():
     pages = []
@@ -112,13 +109,10 @@ def sitemap():
     response = Response(sitemap_xml, mimetype='application/xml')
     return response
 
-<<<<<<< Updated upstream
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
-=======
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
+
 
 
 
