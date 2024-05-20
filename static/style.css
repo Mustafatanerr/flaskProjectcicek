@@ -141,6 +141,7 @@ h2 {
         font-size: 14px;
     }
 }
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -227,4 +228,18 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
 
+.order-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #ff6f00;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.order-button:hover {
+    background-color: #cc5700;
+}
